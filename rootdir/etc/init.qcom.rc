@@ -480,7 +480,14 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
 
+service vendor.power-hal/vendor/bin/hw/android.hardware.power-service 
+    override
+    class hal
+    class hal
+    group system input
+
 service charger /system/bin/charger
+
     class charger
     user system
     group system graphics input
